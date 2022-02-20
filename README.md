@@ -24,13 +24,13 @@ Or install it yourself as:
 require 'imghdr'
 
 Imghdr.what("Some-Pic.jpg")
-    => 'jpeg'
+#    => 'jpeg'
 
 Imghdr.what("Some-Pic.gif")
-    => 'gif'
+#    => 'gif'
 
 Imghdr.what("Some-Music.mp3")
-    => 'nil' (nilClass)
+#    => 'nil' (nilClass)
 ```
 
 ## Development
