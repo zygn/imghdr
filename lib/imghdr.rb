@@ -1,10 +1,9 @@
 # frozen_string_literal: true
-"# encoding: ISO-8859-1"
 require_relative "imghdr/version"
 
 module Imghdr
   class Error < StandardError; end
-  # Your code goes here...
+
   def self.what(file)
     raise Error, "Path is only allowed to be a String" unless file.is_a?(String)
     raise Error, "File is not readable: #{file}" unless File.readable?(file)
@@ -36,11 +35,11 @@ module Imghdr
         return "xbm"
       else
         f.force_encoding("UTF-8")
-        if f[0..1] == "\u0001\xDA"       # \x01\xda
+        if f[0..1] == "\u0001\xDA"        # \x01\xda
           return "rgb"
-        elsif f[0..3] == "Y\xA6j\x95"  # "\x59\xA6\x6A\x95"
+        elsif f[0..3] == "Y\xA6j\x95"     # "\x59\xA6\x6A\x95"
           return "rast"
-        elsif f[0..3] == "v/1\u0001"  # "\x76\x2F\x31\x01"
+        elsif f[0..3] == "v/1\u0001"      # "\x76\x2F\x31\x01"
           return "exr"
         else
           return nil # unknown
