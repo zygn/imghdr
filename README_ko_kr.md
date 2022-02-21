@@ -1,6 +1,6 @@
 # Imghdr
 
-[English](https://github.com/zygn/imghdr#readme) | [한국어]()
+[English](https://github.com/zygn/imghdr#readme) | [한국어](https://github.com/zygn/imghdr/blob/main/README_ko_kr.md)
 
 
 Imghdr은 이미지의 타입을 특정하는 라이브러리이며, Python의 [imghdr](https://docs.python.org/3/library/imghdr.html) 모듈을 본떠 만들어진 RubyGem 입니다.

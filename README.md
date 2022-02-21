@@ -1,4 +1,5 @@
 # Imghdr
+[English](https://github.com/zygn/imghdr#readme) | [한국어](https://github.com/zygn/imghdr/blob/main/README_ko_kr.md)
 
 This library examines the image type of the file, which is RubyGem, which inherits Python [imghdr](https://docs.python.org/3/library/imghdr.html) module.
 
