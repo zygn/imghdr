@@ -13,7 +13,7 @@ module Imghdr
 
     File.open(file, "rb") do |f|
       f = f.read(32)
-      if f[6..9].include?("JFIF") or f[6..9].include?("Exif")
+      if f[6..9].include? "JFIF" or f[6..9].include? "Exif"
         return "jpeg"
       elsif f.include? "PNG"
         return "png"
@@ -33,16 +33,17 @@ module Imghdr
         return "ppm"
       elsif f[0..10].include? "#define "
         return "xbm"
+        # UNDERLINES ARE HAVE ASCII-8BIT ENCODING
       else
         f.force_encoding("UTF-8")
-        if f[0..1] == "\u0001\xDA"        # \x01\xda
+        if f[0..1] == "\u0001\xDA"        # ASCII-8BIT: "\x01\xda"
           return "rgb"
-        elsif f[0..3] == "Y\xA6j\x95"     # "\x59\xA6\x6A\x95"
+        elsif f[0..3] == "Y\xA6j\x95"     # ASCII-8BIT: "\x59\xA6\x6A\x95"
           return "rast"
-        elsif f[0..3] == "v/1\u0001"      # "\x76\x2F\x31\x01"
+        elsif f[0..3] == "v/1\u0001"      # ASCII-8BIT: "\x76\x2F\x31\x01"
           return "exr"
         else
-          return nil # unknown
+          return nil                      # unknown type
         end
       end
     end
